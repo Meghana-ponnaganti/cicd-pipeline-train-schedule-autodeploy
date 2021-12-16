@@ -49,9 +49,10 @@ pipeline {
             }
             steps {
                 kubernetesDeploy(
-                    kubeconfigId: 'kubeconfig',
-                    configs: 'train-schedule-kube-canary.yml',
-                    enableConfigSubstitution: true
+                    //kubeconfigId: 'kubeconfig',
+                    //configs: 'train-schedule-kube-canary.yml',
+                    //enableConfigSubstitution: true
+                    sh 'echo Hello, World!'
                 )
             }
         }
@@ -63,18 +64,20 @@ pipeline {
                 CANARY_REPLICAS = 0
             }
             steps {
-                input 'Deploy to Production?'
-                milestone(1)
-                kubernetesDeploy(
-                    kubeconfigId: 'kubeconfig',
-                    configs: 'train-schedule-kube-canary.yml',
-                    enableConfigSubstitution: true
-                )
-                kubernetesDeploy(
-                    kubeconfigId: 'kubeconfig',
-                    configs: 'train-schedule-kube.yml',
-                    enableConfigSubstitution: true
-                )
+                //input 'Deploy to Production?'
+                //milestone(1)
+                //kubernetesDeploy(
+                  // kubeconfigId: 'kubeconfig',
+                   //configs: 'train-schedule-kube-canary.yml',
+                  // enableConfigSubstitution: true
+                  
+               // )
+               // kubernetesDeploy(
+                    //kubeconfigId: 'kubeconfig',
+                   // configs: 'train-schedule-kube.yml',
+                   // enableConfigSubstitution: true
+               // )
+                sh 'echo Hello, World!'
             }
         }
     }
