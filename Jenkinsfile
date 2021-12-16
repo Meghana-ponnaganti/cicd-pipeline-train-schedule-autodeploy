@@ -53,7 +53,7 @@ pipeline {
                     //configs: 'train-schedule-kube-canary.yml',
                     //enableConfigSubstitution: true
                     sh 'echo Hello, World!'
-                )
+              //  )
             }
         }
         stage('DeployToProduction') {
