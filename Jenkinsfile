@@ -26,7 +26,7 @@ pipeline {
             }
         }
         stage('Push Docker Image') {
-            when {
+           /* when {
                 branch 'master'
             }
             steps {
@@ -36,7 +36,7 @@ pipeline {
                         app.push("latest")
                     }
                 }
-            }
+            } */
         }
         stage('CanaryDeploy') {
             when {
